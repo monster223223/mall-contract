@@ -1,0 +1,21 @@
+#environment
+.env
+
+#node libs
+node_modules/
+
+# project artifacts
+build/contracts/*
+build/coverage/*
+types/*
+.vscode
+coverage.json
+
+#logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# MacOS junk
+.DS_Store
+/.private_key

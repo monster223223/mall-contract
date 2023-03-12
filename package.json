@@ -1,0 +1,62 @@
+{
+    "name": "token-contract",
+    "version": "1.0.0",
+    "description": "NFTmall GEM Token",
+    "main": "index.js",
+    "scripts": {
+        "ganache": "npx ganache-cli",
+        "test": "npx truffle test",
+        "coverage": "npx truffle run coverage",
+        "generate-types": "npx truffle compile --all && npx typechain --target=truffle-v5 \"build/contracts/*.json\"",
+        "generate-abi": "npx truffle compile --all && npx truffle-abi -o ./abi",
+        "generate-artifacts": "npx truffle compile --all && npx truffle-abi -o ./build/abi && npx typechain --target=truffle-v5 \"build/contracts/*.json\"",
+        "deploy-rinkeby": "npx truffle migrate --network rinkeby --reset --skip-dry-run",
+        "verify-rinkeby": "npx truffle run verify GEM --network rinkeby",
+        "deploy-bsctest": "npx truffle migrate --network bsctest --reset --skip-dry-run",
+        "verify-bsctest": "npx truffle run verify GEM --network bsctest",
+        "deploy-bsc": "npx truffle migrate --network bsc --reset",
+        "verify-bsc": "npx truffle run verify GEM --network bsc",
+        "postinstall": "npm run generate-artifacts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NFTmall/token-contract.git"
+    },
+    "bugs": {
+        "url": "https://github.com/NFTmall/token-contract/issues"
+    },
+    "homepage": "https://github.com/NFTmall/token-contract#readme",
+    "keywords": [
+        "NFTmall",
+        "GEM",
+        "NFT",
+        "DeFi",
+        "Crypto",
+        "Token"
+    ],
+    "author": "NFTmall",
+    "license": "MIT",
+    "dependencies": {
+        "@openzeppelin/contracts": "4.0.0",
+        "dotenv": "^8.2.0"
+    },
+    "devDependencies": {
+        "@openzeppelin/test-helpers": "^0.5.10",
+        "@truffle/hdwallet-provider": "^1.2.6",
+        "@typechain/truffle-v5": "^4.0.1",
+        "@types/bn.js": "^5.1.0",
+        "@types/chai": "^4.2.15",
+        "@types/mocha": "^8.2.1",
+        "@types/web3": "^1.2.2",
+        "chai-bn": "^0.2.1",
+        "eth-gas-reporter": "^0.2.21",
+        "solidity-coverage": "^0.7.15",
+        "truffle": "^5.1.58",
+        "truffle-abi": "^1.0.3",
+        "truffle-contract-size": "^2.0.0",
+        "truffle-plugin-verify": "^0.5.4",
+        "ts-node": "^9.1.1",
+        "typechain": "^4.0.1",
+        "typescript": "^4.1.4"
+    }
+}
